@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+        let obj={name:"zs",age:23};
+
+        let objarr=<div>
+            { Object.keys(obj).map((value,index)=>{
+                return <p>遍历的属性是：{value},值是{obj[value]}</p>;
+            })}
+        </div>
+
+        ReactDOM.render(objarr,document.getElementById("d1"));
+    </script>
+</body>
+</html>

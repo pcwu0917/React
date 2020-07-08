@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+        let arr=["eat","drink","run"];
+        let dom1=arr.map(function(item,index){
+            return (<p key={index}>{item}</p>)
+        });
+        ReactDOM.render(dom1,document.getElementById("d1"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+        //创建MyCom组件，继承React的Component类，实现render()方法
+        class MyCom extends React.Component{
+            render(){
+                return(
+                    <div></div>
+                )
+            }
+        }
+        let com=<MyCom />;
+        Reactr.render(com,document.getElementById("d1"));
+    </script>
+</body>
+</html>
