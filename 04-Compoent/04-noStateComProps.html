@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+        let student={
+            name:"zhangsan",
+            age:23
+        }
+        function Student(pros){
+            return (
+                <div>student info: name:{pros.name},age:{pros.age}</div>
+            )
+        }
+        let dom1=<Student {...student}></Student>
+        ReactDOM.render(dom1,document.getElementById("d1"));
+    </script>
+</body>
+</html>

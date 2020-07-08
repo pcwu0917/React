@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+        let student={
+            name:"zhangsan",
+            age:23
+        }
+        class ClassCom extends React.Component{
+            render(){
+                return(
+                    <div>
+                        i am a class component ,one student info is
+                        name:{this.props.name},age:{this.props.age}
+                    </div>
+                )
+            }
+        }
+        let dom1=<ClassCom {...student}></ClassCom>
+        ReactDOM.render(dom1,document.getElementById("d1"));
+    </script>
+</body>
+</html>
