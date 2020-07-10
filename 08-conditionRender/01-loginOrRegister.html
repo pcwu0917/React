@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+        function Login(){
+            return(
+                <button>login</button>
+            )
+        }
+        function Register(){
+            return(
+                <button>register</button>
+            )
+        }
+        //根据isRegister的值来选择性展示标签
+        function Gate(){
+            //const isRegister=true;
+            const isRegister=false;
+            if(isRegister)
+                return <Login />
+            else
+                return <Register />
+        }
+        ReactDOM.render(<Gate />,document.getElementById("d1"));
+    </script>
+</body>
+</html>

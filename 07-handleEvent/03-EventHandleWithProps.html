@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+    class Toggle extends React.Component{
+        constructor(props){
+            super(props);
+            //设置状态对象
+            this.state={name:"Hello World"};        
+        }
+        //类的方法默认是不会绑定this的，需要在button的onClick中进行绑定
+        handleClick(name,e){
+          e.preventDefault();
+          alert(name);
+          console.log(e);
+        }
+        //onClick的调用函数handleClick绑定当前对象和传递的参数
+        render(){
+            return(
+                <a href="http://www.baidu.com" onClick={this.handleClick.bind(this,this.state.name)}>
+                    Click
+                </a>
+            )
+        }
+    }
+    ReactDOM.render(<Toggle />,document.getElementById("d1"));
+    </script>
+</body>
+</html>

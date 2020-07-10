@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+    class Name extends React.Component{
+        render(){
+            return (
+                <h1>Hello {this.props.name}</h1>
+            )
+        }
+    }
+    class Link extends React.Component{
+        render(){
+            return (
+                    <a href={this.props.link}>Hello {this.props.name2}</a>
+            )
+        }
+    }
+    class WebSite extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                name:"React",
+                name2:"Baidu",
+                link:"http://www.baidu.com"
+            }
+        }
+        render(){
+            return(
+                <div>
+                    <Name name={this.state.name}></Name>
+                    <Link name2={this.state.name2} link={this.state.link}></Link>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<WebSite />,document.getElementById("d1"));
+    </script>
+</body>
+</html>
