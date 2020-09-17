@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/babel-standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+        class Gate extends React.Component{
+            constructor(props) {
+                super(props);
+                this.state={isLogin:true}
+                this.login=this.login.bind(this);
+                this.logout=this.logout.bind(this);
+            }
+            logout(){
+                this.setState({isLogin: false})
+            }
+            login(){
+                this.setState({isLogin:true})
+            }
+
+            render(){
+                return(
+                    this.state.isLogin?<button onClick={this.logout}>退出</button>:<button onClick={this.login}>登录</button>
+                )
+            }
+        }
+        ReactDOM.render(<Gate></Gate>,document.getElementById("d1"));
+    </script>
+</body>
+
+</html>
